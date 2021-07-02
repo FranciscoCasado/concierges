@@ -1,4 +1,4 @@
-# DS Boardgame
+# Concierges Boardgame
 
 A boardgame where concierges try to finish the day, while residents demand the most ludicrous orders and the building must be maintained in proper shape. * Currently under development
 
