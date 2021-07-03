@@ -1,21 +1,18 @@
 import random
 
 class Dice:
-    def __init__(self, faces):
-        if not isinstance(faces, list):
+    def __init__(self, faces_list):
+        self.faces = [0]
+        self.__set_faces(faces_list)
+
+    def __set_faces(self, faces_list):
+        if not isinstance(faces_list, list):
             raise TypeError("Las caras deben ser listas")
-        
-        self.face_count = len(faces)
-        if (self.face_count == 0):
+
+        if len(faces_list) == 0:
             raise ValueError("El dado debe tener al menos una cara")
 
-        self.faces = faces.copy()
-        
+        self.faces = faces_list.copy()
 
     def roll(self):
-        result = random.randint(0, self.face_count-1)
-        return self.faces[result]
-
-
-
-    
+        return random.choice(self.faces)
