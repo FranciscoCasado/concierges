@@ -9,7 +9,7 @@ class Dice:
         if not isinstance(faces_list, list):
             raise TypeError("Las caras deben ser listas")
 
-        if len(faces_list) == 0:
+        if not faces_list:
             raise ValueError("El dado debe tener al menos una cara")
 
         self.faces = faces_list.copy()
