@@ -1,18 +1,24 @@
+"""Representation of a dice"""
+
 import random
 
+
 class Dice:
+    """Implementation of a dice of any size"""
+
     def __init__(self, faces_list):
-        self.faces = [0]
-        self.__set_faces(faces_list)
+        self._faces = faces_list.copy()
 
-    def __set_faces(self, faces_list):
-        if not isinstance(faces_list, list):
-            raise TypeError("Las caras deben ser listas")
+    @property
+    def faces(self):
+        """Return all dice faces"""
+        return self._faces
 
-        if not faces_list:
-            raise ValueError("El dado debe tener al menos una cara")
-
-        self.faces = faces_list.copy()
+    @faces.setter
+    def faces(self, faces_list):
+        """Set dice faces according to a list"""
+        self._faces = faces_list.copy()
 
     def roll(self):
-        return random.choice(self.faces)
+        """Pick a random face"""
+        return random.choice(self._faces)
