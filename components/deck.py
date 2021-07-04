@@ -1,25 +1,20 @@
+"""Representation of a deck of cards"""
 import random
 class Deck:
+    """Representation of a deck of cards of any size, as a stack"""
     def __init__(self, card_pile):
-        self.__cards = []
-        self.__build(card_pile)
-
-    def __build(self, card_pile):
-        if not isinstance(card_pile, list):
-            raise TypeError("La pila de cartas debe ser una lista")
-
-        if not card_pile:
-            raise ValueError("La pila de tener al menos una carta")
-
-        self.__cards = card_pile.copy()
+        """Create deck by copying a list of cards given in parameter card_pile"""
+        self._cards = card_pile.copy()
 
     def draw_card(self):
-        return self.__cards.pop()
+        """Pick the element at the top of the stack"""
+        return self._cards.pop()
 
     def put_card_on_top(self, card):
-        self.__cards.append(card)
+        """Put card at the top of the stack"""
+        self._cards.append(card)
 
     def put_card_in_middle(self, card):
-        index = random.randint(0,len(self.__cards))
-        self.__cards.insert(index, card)
-
+        """Put card at a random place in the stack"""
+        index = random.randint(0,len(self._cards))
+        self._cards.insert(index, card)
