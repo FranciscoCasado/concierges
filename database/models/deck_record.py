@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Table
 from sqlalchemy.orm import relationship, backref
-from database import Base
+from models.base import Base
 
 
-class DiceRecord(Base):
-    __tablename__ = "dice"
+class DeckRecord(Base):
+    __tablename__ = "deck"
     id = Column(Integer, primary_key=True)
-    dice_name = Column(String, nullable=False)
+    deck_name = Column(String, nullable=False)

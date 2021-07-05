@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Table
 from sqlalchemy.orm import relationship, backref
-from database import Base
+from models.base import Base
 
 
 class CardRecord(Base):

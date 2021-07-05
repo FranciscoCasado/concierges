@@ -5,12 +5,12 @@ from sqlalchemy import and_, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import asc, desc, func
 
-from database import Base
-from deck_record import DeckRecord
-from dice_record import DiceRecord
-from card_record import CardRecord
-from result_record import ResultRecord
-from result_type_record import ResultTypeRecord
+from models.base import Base
+from models.deck_record import DeckRecord
+from models.dice_record import DiceRecord
+from models.card_record import CardRecord
+from models.result_record import ResultRecord
+from models.result_type_record import ResultTypeRecord
 
 def main():
     path_to_db = 'sqlite:///'+os.getcwd()+'/settings.db'
